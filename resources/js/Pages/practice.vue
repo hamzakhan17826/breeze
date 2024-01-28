@@ -5,6 +5,6 @@ import { Head } from '@inertiajs/vue3';
 <template>
     <Head title="Dashboard" />
     <AuthenticatedLayout>
-        practice
+        practice file
     </AuthenticatedLayout>
 </template>
