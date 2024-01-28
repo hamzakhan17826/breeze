@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/practice', function (){
-    return view('Pages.practice');
-});
+    return inertia::render('practice');
+})->name('practice');
 
 Route::get('send-email', function (){
     $name = 'Testing email';
