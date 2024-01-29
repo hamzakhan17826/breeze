@@ -30,7 +30,7 @@
     </tr>
     <tr style="background-color: #F0FCFD; width: 100%">
         <td style="width: 612px;">
-            <img src="https://aero-ply.imangu.com/logo.png" alt="logo" />
+            <img src="../../js/assets/images/eosvolt.png" alt="logo" />
         </td>
     </tr>
 
