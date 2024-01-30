@@ -28,7 +28,7 @@ Route::get('send-email', function (){
     Mail::to('mohsanattraders@gmail.com')->send(new TestingEmail($name));
 });
 
-Route::get('send-mail', [MailController::class, 'index']);
+Route::get('send-mail/{email?}', [MailController::class, 'index']);
 
 Route::get('test-email', function (){
     return view('mail.test-email');
