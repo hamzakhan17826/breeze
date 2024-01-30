@@ -7,6 +7,7 @@ export const useContaminateStore = defineStore({
         store: {},
         lists: {},
         clone: {},
+        fetching: false,
     }),
     getters: {},
     actions: {
@@ -28,9 +29,11 @@ export const useContaminateStore = defineStore({
         },
         async createContaminate() {
             let vm = this;
+            vm.fetching = true;
             console.log('createContaminate');
             await axios.post(route('contaminates.store'), vm.store)
                 .then(response => {
+                    vm.fetching = false;
                     router.visit('/contaminates');
                 })
                 .catch(error => {

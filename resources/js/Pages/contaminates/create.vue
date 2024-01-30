@@ -1,10 +1,12 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import {useContaminateStore} from "@/Stores/contaminateStore.js";
+import {Head} from "@inertiajs/vue3";
 const storeContaminate = useContaminateStore();
 </script>
 <template>
 <AuthenticatedLayout>
+    <Head title="Create contaminate" />
     <div class="py-4 px-6">
         <div class="p-[1.25rem] bg-white border rounded">
             <h1 class="text-xl font-bold mb-4">Create contaminate</h1>
