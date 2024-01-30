@@ -16,7 +16,8 @@
                     <tr style="background-color: #F0FCFD;">
                         <td style="width: 50%;">&nbsp;</td>
                         <td>
-                            <img src="{{ asset('images/eosvolt.png') }}" alt="eosvolt" />
+{{--                            <img src="{{ asset('images/eosvolt.png') }}" alt="eosvolt" />--}}
+                            <img src="https://i.imgur.com/K76eDkI.png" alt="eosvolt" />
                         </td>
                         <td style="width: 50%;">&nbsp;</td>
                     </tr>
