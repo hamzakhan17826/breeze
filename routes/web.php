@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContaminateController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProfileController;
 use App\Mail\TestingEmail;
 use Illuminate\Foundation\Application;
@@ -26,6 +27,8 @@ Route::get('send-email', function (){
     $name = 'Testing email';
     Mail::to('mohsanattraders@gmail.com')->send(new TestingEmail($name));
 });
+
+Route::get('send-mail', [MailController::class, 'index']);
 
 Route::get('test-email', function (){
     return view('mail.test-email');
