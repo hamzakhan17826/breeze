@@ -16,6 +16,6 @@
     </style>
 </head>
 
-<body style="background-color: #F0FCFD; padding: 0 !important; margin: 0 !important; font-family: Arial, sans-serif">
+<body style="padding: 0 !important; margin: 0 !important; font-family: Arial, sans-serif">
 @yield('body')
 </body>
