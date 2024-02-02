@@ -10,12 +10,12 @@
             border-collapse: collapse;
         }
         h1,h2,h3,h4,h5,h6,tr,p {
-            margin: 0;
-            padding: 0;
+            margin: 0 !important;
+            padding: 0 !important;
         }
     </style>
 </head>
 
-<body style="background-color: #F0FCFD; padding: 0; margin: 0; font-family: Arial, sans-serif">
+<body style="background-color: #F0FCFD; padding: 0 !important; margin: 0 !important; font-family: Arial, sans-serif">
 @yield('body')
 </body>
