@@ -6,75 +6,75 @@
 @section('body')
     <table style="width: 612px; margin: 0 auto; border: unset; border-collapse: collapse;">
         <tr style="background-color: #F0FCFD">
-            <td colspan="5" style="height: 64px">
+            <td colspan="5" style="height: 64px; background-color: #F0FCFD">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
-                <table>
+            <td style="background-color: #F0FCFD">
+                <table style="background-color: #F0FCFD;">
                     <tr style="background-color: #F0FCFD;">
-                        <td style="width: 50%;">&nbsp;</td>
-                        <td>
+                        <td style="width: 50%; background-color: #F0FCFD;">&nbsp;</td>
+                        <td style="background-color: #F0FCFD;">
 {{--                            <img src="{{ asset('images/eosvolt.png') }}" alt="eosvolt" />--}}
                             <img src="https://i.imgur.com/K76eDkI.png" alt="eosvolt" />
                         </td>
-                        <td style="width: 50%;">&nbsp;</td>
+                        <td style="width: 50%; background-color: #F0FCFD;">&nbsp;</td>
                     </tr>
                 </table>
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD; margin: 0 auto; text-align: center;">
-            <td>
-                <h2 style="color: black">Welcome</h2>
+            <td style="background-color: #F0FCFD;">
+                <h2 style="color: black; background-color: #F0FCFD;">Welcome</h2>
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
-                <p style="color: black; text-align: center; line-height: 26px">Welcome to EOSVolt! We're excited to have you <br> join our community of EV enthusiasts. To finalize <br> your registration and gain access to all the <br> amazing features of our app, we just need one <br> more step: confirming your email.</p>
+            <td style="background-color: #F0FCFD;">
+                <p style="background-color: #F0FCFD; color: black; text-align: center; line-height: 26px">Welcome to EOSVolt! We're excited to have you <br> join our community of EV enthusiasts. To finalize <br> your registration and gain access to all the <br> amazing features of our app, we just need one <br> more step: confirming your email.</p>
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 <p style="font-size: 16px; font-weight: 700; color: black; text-align: center">Here is your confirmation code:</p>
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
-                <table>
-                    <tr>
-                        <td style="width: 50%;">&nbsp;</td>
-                        <td>
+            <td style="background-color: #F0FCFD;">
+                <table style="background-color: #F0FCFD;">
+                    <tr style="background-color: #F0FCFD;">
+                        <td style="width: 50%; background-color: #F0FCFD;">&nbsp;</td>
+                        <td style="background-color: #F0FCFD;">
                             <a style="display: inline; box-sizing: border-box; border-radius: 8px; text-decoration: none; background-color: white; text-align: center; color: #000000; font-size: 16px; font-style: normal; font-weight: 700; text-decoration: none !important; text-underline: none !important;" href="#">
                                 <table style="background-color: white; border: unset; border-collapse: separate; border-spacing: 0 !important; border-radius: 8px; width: 178px">
                                     <tr style="background-color: white; border-radius: 8px;">
@@ -97,68 +97,68 @@
                                 </table>
                             </a>
                         </td>
-                        <td style="width: 50%;">&nbsp;</td>
+                        <td style="width: 50%; background-color: #F0FCFD;">&nbsp;</td>
                     </tr>
                 </table>
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 <p style="color: black; text-align: center">Enter the above code in EOSVolt app to complete sign up </p>
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
         <tr style="background-color: #F0FCFD;">
-            <td>
+            <td style="background-color: #F0FCFD;">
                 &nbsp;
             </td>
         </tr>
