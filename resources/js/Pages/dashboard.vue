@@ -133,7 +133,7 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <div class="sr_third_column max-lg:basis-full max-[787px]:basis-full w-[36.375rem]" v-if="!storeDashboard.loading">
+            <div class="sr_third_column max-lg:basis-full max-[787px]:basis-full w-[36.375rem]">
                 <div class="contaminate_header">
                     <div class="contaminate_header_name">
                         Learn about contaminants
@@ -182,11 +182,11 @@ onMounted(() => {
                             fill="#262626" />
                     </svg>
                     <div class="contaminate_title">
-                        {{ storeDashboard.lists.data[0].title }}
+                        {{ storeDashboard?.lists?.data[0]?.title }}
                     </div>
                 </div>
                 <div class="contaminate_description">
-                    {{ storeDashboard.lists.data[0].description }}
+                    {{ storeDashboard?.lists?.data[0]?.description }}
                 </div>
                 <div class="contaminate_footer">
                     <div class="read_more_group" @click="storeUtility.openModal('contaminate')">
