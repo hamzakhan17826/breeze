@@ -7,9 +7,8 @@ export const useDashboardStore = defineStore({
     id: 'dashboard',
     state: () => ({
         store: ref({}),
-        lists: ref({data:{title: '', description: ''}}),
+        lists: ref({}),
         fetching: false,
-        loading: true,
         clone: {},
     }),
     getters: {},
