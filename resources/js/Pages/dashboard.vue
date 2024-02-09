@@ -8,14 +8,15 @@ import {usePage} from "@inertiajs/vue3";
 import {onMounted, watchEffect} from "vue";
 
 const storeDashboard = useDashboardStore();
-const storeContaminate = useContaminateStore();
 const storeUtility = useUtilityStore();
 onMounted(() => {
     watchEffect(() => {
         storeDashboard.lists = usePage().props.contaminate;
-        // console.log(storeDashboard.lists.data[0].title);
+        storeDashboard.lists.all_contaminates = usePage().props.contaminate;
     });
 });
+console.log(JSON.stringify(usePage().props));
+
 function alert(index=null){
     window.alert(index);
 }
@@ -525,13 +526,13 @@ function alert(index=null){
                                 <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M15 18L9 12L15 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <span class="w-2.5 h-2.5 bg-[#FFCB1F] rounded-full cursor-pointer" v-for="(item, index) in storeDashboard?.lists?.total" :key="index" @click="alert(index)"></span>
+                                <span class="w-2.5 h-2.5 bg-[#FFCB1F] rounded-full cursor-pointer" v-for="(item, index) in storeDashboard?.lists?.total" :key="item" @click="alert(item)"></span>
                                 <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M9 18L15 12L9 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                             <div>
-                                <button class="w-[148px] bg-[#262626] py-3.5 rounded text-white text-base font-bold">Close</button>
+                                <button class="w-[148px] bg-[#262626] py-3.5 rounded text-white text-base font-bold" @click="storeUtility.closeModal('contaminate')">Close</button>
                             </div>
                         </div>
                     </div>
