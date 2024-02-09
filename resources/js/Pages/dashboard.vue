@@ -16,7 +16,9 @@ onMounted(() => {
         // console.log(storeDashboard.lists.data[0].title);
     });
 });
-
+function alert(index=null){
+    window.alert(index);
+}
 </script>
 
 <template>
@@ -138,7 +140,7 @@ onMounted(() => {
                     </div>
                     <div class="contaminate_header_arrows">
                         <div class="arrow_group">
-                            <svg :class="storeDashboard.lists.prev_page_url === null ? 'opacity-50 cursor-default': 'cursor-pointer'"
+                            <svg :class="storeDashboard.lists.prev_page_url === null ? 'opacity-50 cursor-default pointer-events-none': 'cursor-pointer'"
                                  @click="storeDashboard.dashboardContaminateNavigation('prev')"
                                  xmlns="http://www.w3.org/2000/svg"
                                  width="20"
@@ -147,7 +149,8 @@ onMounted(() => {
                                  fill="none">
                                 <path d="M12.5 15L7.5 10L12.5 5" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <svg :class="storeDashboard.lists.next_page_url === null ? 'opacity-50 cursor-default': 'cursor-pointer'" @click="storeDashboard.dashboardContaminateNavigation('next')"
+                            <svg :class="storeDashboard.lists.next_page_url === null ? 'opacity-50 cursor-default pointer-events-none': 'cursor-pointer'"
+                                 @click="storeDashboard.dashboardContaminateNavigation('next')"
                                  xmlns="http://www.w3.org/2000/svg" width="20"
                                  height="20"
                                  viewBox="0 0 20 20"
@@ -191,7 +194,7 @@ onMounted(() => {
                 <template v-else>
                     <p class="flex justify-center h-full items-center font-bold">No contaminates found</p>
                 </template>
-                <div class="contaminate_footer">
+                <div class="contaminate_footer" v-if="storeDashboard?.lists?.data?.[0]">
                     <div class="read_more_group" @click="storeUtility.openModal('contaminate')">
                         <div class="read_more">
                             Read more
@@ -518,17 +521,11 @@ onMounted(() => {
                             What is particulate matter? Particulate matter consists of microscopic dust particles that are often invisible to the naked eye. These particles can remain suspended in the air for a long time. Depending on the size and chemical composition, these particles can be hazardous to health.
                         </div>
                         <div class="mt-[58px] flex items-center h-12 justify-between">
-                            <div class="flex items-center gap-10">
+                            <div class="flex items-center gap-5">
                                 <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M15 18L9 12L15 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="130" height="10" viewBox="0 0 130 10" fill="none">
-                                    <circle cx="5" cy="5" r="5" fill="#FFCB1F"/>
-                                    <circle cx="35" cy="5" r="5" fill="#D9DADB"/>
-                                    <circle cx="65" cy="5" r="5" fill="#D9DADB"/>
-                                    <circle cx="95" cy="5" r="5" fill="#D9DADB"/>
-                                    <circle cx="125" cy="5" r="5" fill="#D9DADB"/>
-                                </svg>
+                                <span class="w-2.5 h-2.5 bg-[#FFCB1F] rounded-full cursor-pointer" v-for="(item, index) in storeDashboard?.lists?.total" :key="index" @click="alert(index)"></span>
                                 <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M9 18L15 12L9 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
