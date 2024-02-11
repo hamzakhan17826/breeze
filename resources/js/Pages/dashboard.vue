@@ -12,7 +12,7 @@ const storeUtility = useUtilityStore();
 onMounted(() => {
     watchEffect(() => {
         storeDashboard.lists = usePage().props.contaminate;
-        storeDashboard.lists.all_contaminates = usePage().props.contaminate;
+        storeDashboard.lists.all_contaminates = usePage().props.all_contaminates;
     });
 });
 console.log(JSON.stringify(usePage().props));
@@ -142,7 +142,7 @@ function alert(index=null){
                     <div class="contaminate_header_arrows">
                         <div class="arrow_group">
                             <svg :class="storeDashboard.lists.prev_page_url === null ? 'opacity-50 cursor-default pointer-events-none': 'cursor-pointer'"
-                                 @click="storeDashboard.dashboardContaminateNavigation('prev')"
+                                 @click="storeDashboard.contaminateNavigation('prev')"
                                  xmlns="http://www.w3.org/2000/svg"
                                  width="20"
                                  height="20"
@@ -151,7 +151,7 @@ function alert(index=null){
                                 <path d="M12.5 15L7.5 10L12.5 5" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             <svg :class="storeDashboard.lists.next_page_url === null ? 'opacity-50 cursor-default pointer-events-none': 'cursor-pointer'"
-                                 @click="storeDashboard.dashboardContaminateNavigation('next')"
+                                 @click="storeDashboard.contaminateNavigation('next')"
                                  xmlns="http://www.w3.org/2000/svg" width="20"
                                  height="20"
                                  viewBox="0 0 20 20"
@@ -526,7 +526,7 @@ function alert(index=null){
                                 <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M15 18L9 12L15 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <span class="w-2.5 h-2.5 bg-[#FFCB1F] rounded-full cursor-pointer" v-for="(item, index) in storeDashboard?.lists?.total" :key="item" @click="alert(item)"></span>
+                                <span :class="['w-2.5 h-2.5 rounded-full cursor-pointer', {'bg-[#FFCB1F]': 1}]" v-for="(item, index) in storeDashboard?.lists?.all_contaminates?.data" :key="index" @click="alert(item.id)"></span>
                                 <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M9 18L15 12L9 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>

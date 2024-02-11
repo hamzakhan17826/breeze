@@ -13,7 +13,7 @@ export const useDashboardStore = defineStore({
     }),
     getters: {},
     actions: {
-        async dashboardContaminateNavigation(status = null) {
+        async contaminateNavigation(status = null) {
             let vm = this;
             vm.fetching = true;
             const data = {current_page: useUtilityStore().paginate.current_page, status: status};
