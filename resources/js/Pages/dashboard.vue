@@ -2,7 +2,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import {useDashboardStore} from "@/Stores/dashboardStore.js";
-import {useContaminateStore} from "@/Stores/contaminateStore.js";
 import {useUtilityStore} from "@/Stores/utilityStore.js";
 import {usePage} from "@inertiajs/vue3";
 import {onMounted, watchEffect} from "vue";
@@ -520,13 +519,18 @@ function alert(index=null){
                         </div>
                         <div>
                             What is particulate matter? Particulate matter consists of microscopic dust particles that are often invisible to the naked eye. These particles can remain suspended in the air for a long time. Depending on the size and chemical composition, these particles can be hazardous to health.
-                        </div>
+                        </div>{{storeDashboard?.lists?.data?.[0]?.id}}
                         <div class="mt-[58px] flex items-center h-12 justify-between">
                             <div class="flex items-center gap-5">
                                 <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M15 18L9 12L15 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <span :class="['w-2.5 h-2.5 rounded-full cursor-pointer', {'bg-[#FFCB1F]': 1}]" v-for="(item, index) in storeDashboard?.lists?.all_contaminates?.data" :key="index" @click="alert(item.id)"></span>
+                                <span :class="['w-2.5 h-2.5 rounded-full cursor-pointer',
+                                {
+                                    'bg-[#FFCB1F]': storeDashboard?.lists?.all_contaminates?.data?.index?.id === storeDashboard?.lists?.data?.index?.id,
+                                    'bg-amber-800': storeDashboard?.lists?.all_contaminates?.data?.index?.id !== storeDashboard?.lists?.data?.index?.id
+                                }
+                                ]" v-for="(item, index) in storeDashboard?.lists?.all_contaminates?.data" :key="index" @click="alert(item.id)"></span>
                                 <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M9 18L15 12L9 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
