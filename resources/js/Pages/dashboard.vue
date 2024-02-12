@@ -11,7 +11,6 @@ const storeUtility = useUtilityStore();
 onMounted(() => {
     watchEffect(() => {
         storeDashboard.lists = usePage().props.contaminate;
-        storeDashboard.lists.all_contaminates = usePage().props.all_contaminates;
     });
 });
 console.log(JSON.stringify(usePage().props));
@@ -500,47 +499,44 @@ function alert(index=null){
                     <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
                 </div>
                 <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-                <div
-                    class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-                    role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-                    <div class="bg-white p-6">
-                        <div class="flex gap-4 mb-4">
-                            <div class="bg-[#FFCB1F] rounded p-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <path d="M5.5445 2.95605C4.0942 2.95605 2.91431 4.13603 2.91431 5.58624C2.91431 5.76795 3.06135 5.91499 3.24305 5.91499C3.42475 5.91499 3.57179 5.76795 3.57179 5.58624C3.57179 4.49846 4.45663 3.61362 5.54441 3.61362C5.72612 3.61362 5.87316 3.46658 5.87316 3.28488C5.87316 3.10318 5.72628 2.95605 5.5445 2.95605Z" fill="#262622"/>
-                                    <path d="M8.83228 14.6278C8.83228 14.8095 8.97931 14.9566 9.16102 14.9566C9.34272 14.9566 9.48976 14.8095 9.48976 14.6278C9.48976 13.087 10.7435 11.8333 12.2843 11.8333C12.466 11.8333 12.6131 11.6862 12.6131 11.5045C12.6131 11.3228 12.466 11.1758 12.2843 11.1758C10.3808 11.1757 8.83228 12.7242 8.83228 14.6278Z" fill="#262622"/>
-                                    <path d="M15.7534 6.38315C17.2942 6.38315 18.548 5.12937 18.548 3.58859C18.548 2.04781 17.2942 0.793945 15.7534 0.793945C14.2126 0.793945 12.9589 2.04773 12.9589 3.58851C12.9589 3.59729 12.9601 3.60584 12.9602 3.61463L9.20121 4.36642C8.74634 2.68983 7.21557 1.45151 5.39698 1.45151C3.22142 1.45151 1.45166 3.22127 1.45166 5.39684C1.45166 7.5724 3.22142 9.34216 5.39698 9.34216C6.10614 9.34216 6.77046 9.15151 7.34617 8.82268L8.87857 10.968C7.95231 11.8382 7.36969 13.0701 7.36969 14.4382C7.36969 17.0667 9.50831 19.2054 12.1369 19.2054C14.7656 19.2054 16.9042 17.0668 16.9042 14.4382C16.9042 12.6383 15.901 11.0689 14.4248 10.2578L15.717 6.38136C15.7293 6.38144 15.7412 6.38315 15.7534 6.38315ZM15.7534 1.45151C16.9318 1.45151 17.8905 2.41024 17.8905 3.58859C17.8905 4.76694 16.9318 5.72566 15.7534 5.72566C14.5751 5.72566 13.6164 4.76694 13.6164 3.58859C13.6164 2.41024 14.5752 1.45151 15.7534 1.45151ZM5.39698 8.68459C3.58426 8.68459 2.10923 7.20956 2.10923 5.39684C2.10923 3.58403 3.58418 2.10908 5.39698 2.10908C7.20979 2.10908 8.68474 3.58403 8.68474 5.39684C8.68482 7.20964 7.20979 8.68459 5.39698 8.68459ZM16.2466 14.4382C16.2466 16.7043 14.403 18.5479 12.1369 18.5479C9.87074 18.5479 8.02717 16.7043 8.02717 14.4382C8.02717 12.172 9.87074 10.3285 12.1369 10.3285C14.4031 10.3285 16.2466 12.172 16.2466 14.4382ZM13.823 9.98459C13.2979 9.78507 12.7311 9.6709 12.1369 9.6709C11.113 9.6709 10.1658 9.99851 9.38796 10.5501L7.88933 8.45203C8.77531 7.72798 9.34239 6.62767 9.34239 5.39684C9.34239 5.26713 9.33523 5.13921 9.32294 5.01268L13.046 4.26804C13.2944 5.25639 14.0687 6.03561 15.0543 6.29103L13.823 9.98459Z" fill="#262622" stroke="#262622" stroke-width="0.5"/>
-                                    <path d="M14.7502 4.107C14.9319 4.107 15.079 3.95996 15.079 3.77825C15.079 3.32493 15.4476 2.95631 15.9009 2.95631C16.0826 2.95631 16.2296 2.80927 16.2296 2.62757C16.2296 2.44587 16.0826 2.29883 15.9009 2.29883C15.0851 2.29883 14.4214 2.9625 14.4214 3.77833C14.4214 3.95996 14.5684 4.107 14.7502 4.107Z" fill="#262622"/>
-                                </svg>
-                            </div>
-                            <div class="">
-                                <h1 class="text-xl font-bold">Volatile organic compounds</h1>
-                            </div>
-                        </div>
-                        <div>
-                            What is particulate matter? Particulate matter consists of microscopic dust particles that are often invisible to the naked eye. These particles can remain suspended in the air for a long time. Depending on the size and chemical composition, these particles can be hazardous to health.
-                        </div>{{storeDashboard?.lists?.data?.[0]?.id}}
-                        <div class="mt-[58px] flex items-center h-12 justify-between">
-                            <div class="flex items-center gap-5">
-                                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M15 18L9 12L15 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span :class="['w-2.5 h-2.5 rounded-full cursor-pointer',
-                                {
-                                    'bg-[#FFCB1F]': storeDashboard?.lists?.all_contaminates?.data?.index?.id === storeDashboard?.lists?.data?.index?.id,
-                                    'bg-amber-800': storeDashboard?.lists?.all_contaminates?.data?.index?.id !== storeDashboard?.lists?.data?.index?.id
-                                }
-                                ]" v-for="(item, index) in storeDashboard?.lists?.all_contaminates?.data" :key="index" @click="alert(item.id)"></span>
-                                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 18L15 12L9 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                <template v-if="storeDashboard?.lists?.data?.[0]">
+                    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                        role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                        <div class="bg-white p-6">
+                            <div class="flex gap-4 mb-4">
+                                <div class="bg-[#FFCB1F] rounded p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M5.5445 2.95605C4.0942 2.95605 2.91431 4.13603 2.91431 5.58624C2.91431 5.76795 3.06135 5.91499 3.24305 5.91499C3.42475 5.91499 3.57179 5.76795 3.57179 5.58624C3.57179 4.49846 4.45663 3.61362 5.54441 3.61362C5.72612 3.61362 5.87316 3.46658 5.87316 3.28488C5.87316 3.10318 5.72628 2.95605 5.5445 2.95605Z" fill="#262622"/>
+                                        <path d="M8.83228 14.6278C8.83228 14.8095 8.97931 14.9566 9.16102 14.9566C9.34272 14.9566 9.48976 14.8095 9.48976 14.6278C9.48976 13.087 10.7435 11.8333 12.2843 11.8333C12.466 11.8333 12.6131 11.6862 12.6131 11.5045C12.6131 11.3228 12.466 11.1758 12.2843 11.1758C10.3808 11.1757 8.83228 12.7242 8.83228 14.6278Z" fill="#262622"/>
+                                        <path d="M15.7534 6.38315C17.2942 6.38315 18.548 5.12937 18.548 3.58859C18.548 2.04781 17.2942 0.793945 15.7534 0.793945C14.2126 0.793945 12.9589 2.04773 12.9589 3.58851C12.9589 3.59729 12.9601 3.60584 12.9602 3.61463L9.20121 4.36642C8.74634 2.68983 7.21557 1.45151 5.39698 1.45151C3.22142 1.45151 1.45166 3.22127 1.45166 5.39684C1.45166 7.5724 3.22142 9.34216 5.39698 9.34216C6.10614 9.34216 6.77046 9.15151 7.34617 8.82268L8.87857 10.968C7.95231 11.8382 7.36969 13.0701 7.36969 14.4382C7.36969 17.0667 9.50831 19.2054 12.1369 19.2054C14.7656 19.2054 16.9042 17.0668 16.9042 14.4382C16.9042 12.6383 15.901 11.0689 14.4248 10.2578L15.717 6.38136C15.7293 6.38144 15.7412 6.38315 15.7534 6.38315ZM15.7534 1.45151C16.9318 1.45151 17.8905 2.41024 17.8905 3.58859C17.8905 4.76694 16.9318 5.72566 15.7534 5.72566C14.5751 5.72566 13.6164 4.76694 13.6164 3.58859C13.6164 2.41024 14.5752 1.45151 15.7534 1.45151ZM5.39698 8.68459C3.58426 8.68459 2.10923 7.20956 2.10923 5.39684C2.10923 3.58403 3.58418 2.10908 5.39698 2.10908C7.20979 2.10908 8.68474 3.58403 8.68474 5.39684C8.68482 7.20964 7.20979 8.68459 5.39698 8.68459ZM16.2466 14.4382C16.2466 16.7043 14.403 18.5479 12.1369 18.5479C9.87074 18.5479 8.02717 16.7043 8.02717 14.4382C8.02717 12.172 9.87074 10.3285 12.1369 10.3285C14.4031 10.3285 16.2466 12.172 16.2466 14.4382ZM13.823 9.98459C13.2979 9.78507 12.7311 9.6709 12.1369 9.6709C11.113 9.6709 10.1658 9.99851 9.38796 10.5501L7.88933 8.45203C8.77531 7.72798 9.34239 6.62767 9.34239 5.39684C9.34239 5.26713 9.33523 5.13921 9.32294 5.01268L13.046 4.26804C13.2944 5.25639 14.0687 6.03561 15.0543 6.29103L13.823 9.98459Z" fill="#262622" stroke="#262622" stroke-width="0.5"/>
+                                        <path d="M14.7502 4.107C14.9319 4.107 15.079 3.95996 15.079 3.77825C15.079 3.32493 15.4476 2.95631 15.9009 2.95631C16.0826 2.95631 16.2296 2.80927 16.2296 2.62757C16.2296 2.44587 16.0826 2.29883 15.9009 2.29883C15.0851 2.29883 14.4214 2.9625 14.4214 3.77833C14.4214 3.95996 14.5684 4.107 14.7502 4.107Z" fill="#262622"/>
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    <h1 class="text-xl font-bold">{{ storeDashboard.lists.data[0].title }}</h1>
+                                </div>
                             </div>
                             <div>
-                                <button class="w-[148px] bg-[#262626] py-3.5 rounded text-white text-base font-bold" @click="storeUtility.closeModal('contaminate')">Close</button>
+                                {{ storeDashboard.lists.data[0].description }}
+                            </div>
+                            <div class="mt-[58px] flex items-center h-12 justify-between">
+                                <div class="flex items-center gap-5">
+                                    <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M15 18L9 12L15 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span :class="['w-2.5 h-2.5 rounded-full cursor-pointer', { 'bg-[#FFCB1F]': storeDashboard.lists.current_page, 'bg-amber-800': !storeDashboard.lists.current_page }]"
+                                          v-for="(item, index) in storeDashboard.lists.total" :key="index" @click="alert(item.id)"></span>
+                                    <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9 18L15 12L9 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <button class="w-[148px] bg-[#262626] py-3.5 rounded text-white text-base font-bold" @click="storeUtility.closeModal('contaminate')">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </template>
             </div>
         </div>
     </AuthenticatedLayout>

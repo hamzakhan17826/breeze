@@ -11,8 +11,7 @@ class DashboardController extends Controller
     public function index(){
         info('ContaminateController.index');
         $contaminate = Contaminate::paginate(1);
-        $all_contaminates = Contaminate::select('id')->paginate(5);
-        return Inertia::render('dashboard', compact('contaminate','all_contaminates'));
+        return Inertia::render('dashboard', compact('contaminate'));
     }
     public function dashboardContaminate(Request $request){
         info('ContaminateController.index');
