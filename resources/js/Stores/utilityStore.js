@@ -51,8 +51,7 @@ export const useUtilityStore = defineStore({
             const active_link = data.links.find(link => link.active);
             if (active_link){
                 pagination.active_link = active_link.active;
-                const active_page = active_link.url ? parseInt(active_link.url.split('=')[1]) : null;
-                pagination.active_page = active_page;
+                pagination.active_page = active_link.url ? parseInt(active_link.url.split('=')[1]) : null;
             }else{
                 pagination.active_link = null;
                 pagination.active_page = null;
