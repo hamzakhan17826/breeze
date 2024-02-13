@@ -57,7 +57,7 @@ export const useUtilityStore = defineStore({
                 pagination.active_link = null;
                 pagination.active_page = null;
             }
-            console.log('active_link', JSON.stringify(active_link));
+            // console.log('active_link', JSON.stringify(active_link));
         }
     }
 })

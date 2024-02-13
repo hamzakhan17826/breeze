@@ -20,7 +20,7 @@ export const useDashboardStore = defineStore({
             await axios.post(route('dashboardContaminate'), data)
                 .then((response) => {
                     vm.lists = response.data.data;
-                    console.log(JSON.stringify(response.data.data));
+                    // console.log(JSON.stringify(response.data.data));
                     useUtilityStore().updatePagination(response.data.data);
                     vm.fetching = false;
                 })
