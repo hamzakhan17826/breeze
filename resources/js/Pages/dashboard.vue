@@ -11,9 +11,10 @@ const storeUtility = useUtilityStore();
 onMounted(() => {
     watchEffect(() => {
         storeDashboard.lists = usePage().props.contaminate;
+        storeUtility.updatePagination(usePage().props.contaminate);
     });
 });
-console.log(JSON.stringify(usePage().props));
+// console.log(JSON.stringify(usePage().props.contaminate));
 
 function alert(index=null){
     window.alert(index);
@@ -75,7 +76,7 @@ function alert(index=null){
                             </div>
                         </div>
                     </div>
-                    <p class="alert_description" v-if="1 == 0">There are no active alerts right now</p>
+                    <p class="alert_description" v-if="1 === 0">There are no active alerts right now</p>
                 </div>
             </div>
             <div class="sr_second_column max-lg:flex-grow max-lg:basis-5/12 max-[787px]:basis-full">

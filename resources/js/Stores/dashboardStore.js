@@ -16,12 +16,12 @@ export const useDashboardStore = defineStore({
         async contaminateNavigation(status = null) {
             let vm = this;
             vm.fetching = true;
-            const data = {current_page: useUtilityStore().paginate.current_page, status: status};
+            const data = {current_page: useUtilityStore().pagination.current_page, status: status};
             await axios.post(route('dashboardContaminate'), data)
                 .then((response) => {
-                    // console.log(JSON.stringify(response.data.data));
                     vm.lists = response.data.data;
-                    useUtilityStore().paginate.current_page = response.data.data.current_page;
+                    console.log(JSON.stringify(response.data.data));
+                    useUtilityStore().updatePagination(response.data.data);
                     vm.fetching = false;
                 })
                 .catch(error => {
