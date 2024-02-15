@@ -34,6 +34,9 @@ export const useUtilityStore = defineStore({
                 modalElement.classList.add('hidden');
             }
         },
+        alert(value=null){
+            window.alert(JSON.stringify(value));
+        },
         updatePagination(data = null){
             // console.log('updatePagination', JSON.stringify(data));
             const pagination = useUtilityStore().pagination;

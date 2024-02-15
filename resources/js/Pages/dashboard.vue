@@ -14,10 +14,10 @@ onMounted(() => {
         storeUtility.updatePagination(usePage().props.contaminate);
     });
 });
-// console.log(JSON.stringify(usePage().props.contaminate));
+console.log(JSON.stringify(usePage().props.contaminate));
 
-function alert(index=null){
-    window.alert(index);
+function getPageNoFromUrl(){
+    alert(123);
 }
 </script>
 
@@ -522,12 +522,21 @@ function alert(index=null){
                             </div>
                             <div class="mt-[58px] flex items-center h-12 justify-between">
                                 <div class="flex items-center gap-5">
-                                    <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <svg :class="storeDashboard.lists.prev_page_url === null ? 'opacity-50 cursor-default pointer-events-none': 'cursor-pointer'"
+                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        @click="storeDashboard.contaminateNavigation('prev')"
+                                    >
                                         <path d="M15 18L9 12L15 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
+
                                     <span :class="['w-2.5 h-2.5 rounded-full cursor-pointer', { 'bg-[#FFCB1F]': storeDashboard.lists.current_page == item.label, 'bg-[#D9DADB]': storeDashboard.lists.current_page != item.label }]"
-                                          v-for="(item, index) in storeDashboard.lists.links.slice(1, storeDashboard.lists.links.length -1)" :key="index" @click="alert(item.label)"></span>
-                                    <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                          v-for="(item, index) in storeDashboard.lists.links.slice(1, storeDashboard.lists.links.length -1)" :key="index" @click="storeDashboard.contaminateNavigation(''); getPageNoFromUrl()">
+                                    </span>
+
+                                    <svg :class="storeDashboard.lists.next_page_url === null ? 'opacity-50 cursor-default pointer-events-none': 'cursor-pointer'"
+                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        @click="storeDashboard.contaminateNavigation('next')"
+                                    >
                                         <path d="M9 18L15 12L9 6" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
