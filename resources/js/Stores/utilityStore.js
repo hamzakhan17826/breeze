@@ -51,15 +51,6 @@ export const useUtilityStore = defineStore({
             pagination.total = data.total;
             pagination.last_page = data.last_page;
             pagination.links = data.links;
-            const active_link = data.links.find(link => link.active);
-            if (active_link){
-                pagination.active_link = active_link.active;
-                pagination.active_page = active_link.url ? parseInt(active_link.url.split('=')[1]) : null;
-            }else{
-                pagination.active_link = null;
-                pagination.active_page = null;
-            }
-            // console.log('active_link', JSON.stringify(active_link));
         }
     }
 })
