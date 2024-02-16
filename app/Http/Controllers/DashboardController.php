@@ -23,6 +23,9 @@ class DashboardController extends Controller
             $request->current_page = $request->current_page + 1;
             $contaminate = Contaminate::paginate(1, ['*'], 'page', $request->current_page);
             return response()->json(['status' => 'success', 'data' => $contaminate]);
+        }else if($request->current_page){
+            $contaminate = Contaminate::paginate(1, ['*'], 'page', $request->current_page);
+            return response()->json(['status' => 'success', 'data' => $contaminate]);
         }
     }
 }

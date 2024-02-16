@@ -14,10 +14,11 @@ onMounted(() => {
         storeUtility.updatePagination(usePage().props.contaminate);
     });
 });
-console.log(JSON.stringify(usePage().props.contaminate));
+// console.log(JSON.stringify(usePage().props.contaminate));
 
-function getPageNoFromUrl(){
-    alert(123);
+function getPageNoFromUrl(url){
+    storeUtility.pagination.current_page = url.url ? parseInt(url.url.split('=')[1]) : null;
+    storeDashboard.contaminateNavigation('');
 }
 </script>
 
@@ -530,7 +531,7 @@ function getPageNoFromUrl(){
                                     </svg>
 
                                     <span :class="['w-2.5 h-2.5 rounded-full cursor-pointer', { 'bg-[#FFCB1F]': storeDashboard.lists.current_page == item.label, 'bg-[#D9DADB]': storeDashboard.lists.current_page != item.label }]"
-                                          v-for="(item, index) in storeDashboard.lists.links.slice(1, storeDashboard.lists.links.length -1)" :key="index" @click="storeDashboard.contaminateNavigation(''); getPageNoFromUrl()">
+                                          v-for="(item, index) in storeDashboard.lists.links.slice(1, storeDashboard.lists.links.length -1)" :key="index" @click="getPageNoFromUrl(item)">
                                     </span>
 
                                     <svg :class="storeDashboard.lists.next_page_url === null ? 'opacity-50 cursor-default pointer-events-none': 'cursor-pointer'"
